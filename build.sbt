@@ -39,7 +39,7 @@ lazy val root =
     .settings(
       stdSettings("zio-concurrent")
     )
-    .settings(buildInfoSettings("zio-concurrent"))
+    .settings(buildInfoSettings("zio.concurrent"))
     .enablePlugins(BuildInfoPlugin)
 
 lazy val docs = project
