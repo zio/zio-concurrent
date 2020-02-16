@@ -1,4 +1,4 @@
-package zio-concurrent
+package zio.concurrent
 
 import zio._
 import zio.console._

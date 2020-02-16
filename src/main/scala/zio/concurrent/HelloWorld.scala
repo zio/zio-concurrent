@@ -1,6 +1,5 @@
-package zio-concurrent
-
-import zio.App
+package zio.concurrent
+import zio._
 import zio.console._
 
 object HelloWorld extends App {
