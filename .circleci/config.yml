@@ -259,12 +259,12 @@ jobs:
       - <<: *scala_213
       - <<: *jdk_8
 
-  microsite:
-    <<: *microsite
-    <<: *machine_ubuntu
-    environment:
-      - <<: *scala_212
-      - <<: *jdk_8
+  # microsite:
+  #   <<: *microsite
+  #   <<: *machine_ubuntu
+  #   environment:
+  #     - <<: *scala_212
+  #     - <<: *jdk_8
 
 workflows:
   version: 2
@@ -311,11 +311,11 @@ workflows:
             branches:
               only:
                 - master
-      - microsite:
-          context: Website
-          requires:
-            - microsite
-          filters:
-            <<: *filter_tags
-            branches:
-              ignore: /.*/
+      # - microsite:
+      #     context: Website
+      #     requires:
+      #       - microsite
+      #     filters:
+      #       <<: *filter_tags
+      #       branches:
+      #         ignore: /.*/
