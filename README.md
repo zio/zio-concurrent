@@ -5,7 +5,7 @@
 | [![Build Status][Badge-Circle]][Link-Circle] | [![Release Artifacts][Badge-SonatypeReleases]][Link-SonatypeReleases] | [![Snapshot Artifacts][Badge-SonatypeSnapshots]][Link-SonatypeSnapshots] | [![Badge-Discord]][Link-Discord] |
 
 # Summary
-A collection of lightweight, non-blocking, incorruptible concurrency primitives built for ZIO ecosystem.
+A collection of lightweight, functional, non-blocking, interruptible concurrency primitives built for ZIO ecosystem.
 
 ## Rate Limiter
 Allows slowing down some a series of effects (or a single effect run multiple times) to match the given throughput.
