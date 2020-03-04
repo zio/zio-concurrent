@@ -5,7 +5,28 @@
 | [![Build Status][Badge-Circle]][Link-Circle] | [![Release Artifacts][Badge-SonatypeReleases]][Link-SonatypeReleases] | [![Snapshot Artifacts][Badge-SonatypeSnapshots]][Link-SonatypeSnapshots] | [![Badge-Discord]][Link-Discord] |
 
 # Summary
-TODO: Tagline
+A collection of lightweight, functional, non-blocking, interruptible concurrency primitives built for ZIO ecosystem.
+
+## Rate Limiter
+Allows slowing down some a series of effects (or a single effect run multiple times) to match the given throughput.
+Example: 
+
+```scala
+import zio.concurrent.RateLimiter
+import zio.concurrent.RateLimiter._
+import zio.console._
+import zio._
+
+for {
+  limiter <- RateLimiter.make(Frequency.unsafePerSecond(1.0), buffer = 1)
+  _       <- ZIO.foreachPar(1 to 1000)  { i =>
+             limiter.rateLimit(putStrLn(i.toString))
+          }
+  _       <- limiter.close() 
+} yield ()
+ 
+```
+The code above will print at most one number a second (after the initial burst of up to `buffer`).
 
 # Documentation
 [zio-concurrent Microsite](https://zio.github.io/zio-concurrent/)
