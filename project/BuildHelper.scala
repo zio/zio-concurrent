@@ -54,9 +54,10 @@ object BuildHelper {
           "-opt-warnings",
           "-Ywarn-extra-implicit",
           "-Ywarn-unused:_,imports",
-          "-Ywarn-unused:imports",
-          "-opt:l:inline",
-          "-opt-inline-from:<source>"
+          "-Ywarn-unused:imports"
+//        enable in 2.12.11 (https://github.com/scala/bug/issues/11671)
+//          "-opt:l:inline",
+//          "-opt-inline-from:<source>"
         ) ++ stdOptsUpto212
       case _ =>
         Seq("-Xexperimental") ++ stdOptsUpto212
